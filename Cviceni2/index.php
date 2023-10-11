@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    $authorName = 'Patrik'
+    $authorName = 'Patrik';
   ?>
 
   <?php
@@ -10,9 +10,8 @@
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="author" content='; echo "$authorName"; echo ' />
+    <meta name="author" content='; echo $authorName ; echo ' />
     <meta name="description" content="" />
-
     <title>EduCover Template for PVA</title>
 
     <!-- Bootstrap core CSS -->
@@ -33,7 +32,7 @@
           <nav class="nav nav-masthead justify-content-center">
             <a class="nav-link active" href="index.php">Home</a>
             <a class="nav-link" href="aboutme.php">About <?php 
-              echo "$authorName"
+              echo $authorName;
             ?></a>
             <a class="nav-link" href="#">Contact</a>
           </nav>

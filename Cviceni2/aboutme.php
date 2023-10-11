@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-    <?php 
-      $authorName = 'Patrik';
-    ?>
+<?php
+    $authorName = 'Patrik';
+  ?>
+
   <?php
     echo '  <head>
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="author" content="yourName" />
+    <meta name="author" content='; echo $authorName ; echo ' />
     <meta name="description" content="" />
-
     <title>EduCover Template for PVA</title>
 
     <!-- Bootstrap core CSS -->
@@ -21,7 +21,7 @@
 
     <!-- Custom styles for this template -->
     <link href="cover.css" rel="stylesheet" />
-  </head>';;
+  </head>';
   ?>
 
   <body class="text-center">
@@ -31,7 +31,7 @@
           <h3 class="masthead-brand">EduCover</h3>
           <nav class="nav nav-masthead justify-content-center">
             <a class="nav-link" href="index.php">Home</a>
-            <a class="nav-link active" href="aboutme.php">About <?php echo "$authorName" ?></a>
+            <a class="nav-link active" href="aboutme.php">About <?php echo $authorName; ?></a>
             <a class="nav-link" href="#">Contact</a>
           </nav>
         </div>
@@ -40,7 +40,7 @@
       <main role="main" class="inner cover">
         <h1 class="cover-heading"> About 
         <?php 
-          echo "$authorName";
+          echo $authorName;
         ?>  
         </h1>
         <p class="lead">
