@@ -13,6 +13,6 @@ $b = 20;
 $obvod = 2*($a + $b);
 $obsah = $a * $b;
 
-echo 'Obdélník se stranami o délkách ' . $a . ' cm a ' . $b . ' cm má obsah ' . $obsah . ' cm2 a obvod ' . $obvod . ' cm.'
+echo 'Obdélník se stranami o délkách ' . $a . ' cm a ' . $b . ' cm má obsah ' . $obsah . ' cm2 a obvod ' . $obvod . ' cm.';
 
 ?>

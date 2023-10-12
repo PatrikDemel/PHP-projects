@@ -8,6 +8,6 @@
 $jmeno = 'Patrik';
 $prijmeni = 'Demel';
 
-echo 'Jmenuji se ' . $jmeno . ' ' . $prijmeni . ' a studuji informatiku'
+echo 'Jmenuji se ' . $jmeno . ' ' . $prijmeni . ' a studuji informatiku';
 
  ?>

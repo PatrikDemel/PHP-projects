@@ -5,10 +5,10 @@
  * Vypiš html element <img> se všemi jeho náležitostmi. Využijte vhodně escapovací sekvenci.
  * */
 
- echo "<img src=\"#\" alt=\"popisek\">"
+ echo "<img src=\"#\" alt=\"popisek\">";
 
 /*
  * Zobraz pomocí escape sekvence zpětné lomítko
  */
-echo "\\"
+echo "\\";
 ?>

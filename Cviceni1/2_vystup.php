@@ -15,7 +15,7 @@
     $soucet = $A + $B;
     $nasobeni = $A * $B;
 
-    echo "Výsledek součtu: $soucet \nVýsledek násobení: $nasobeni"
+    echo "Výsledek součtu: $soucet \nVýsledek násobení: $nasobeni";
  }
 
 

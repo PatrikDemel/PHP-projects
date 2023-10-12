@@ -15,6 +15,6 @@ $name = 'Patrik';
 $integer = 20;
 $float = 20.15;
 $boolean = true;
-$string = 'sometext'
+$string = 'sometext';
 
 ?>
