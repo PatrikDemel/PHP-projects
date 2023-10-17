@@ -1,43 +1,24 @@
 <?php
+// Starts the session
 session_start();
 
-// checking logged user
-if (isset($_SESSION['username'])) {
-    header("location: profile.php");
-}
+// Checks if the user is logged in
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+    // Saves session data into variables
+    $first_name = $_SESSION['first_name'];
+    $last_name = $_SESSION['last_name'];
+    $email = $_SESSION['email'];
+    $username = $_SESSION['username'];
+    $password = $_SESSION['password'];
 
-// Error message variable
-$message = '';
-
-// connecting to the database
-$con = mysqli_connect("localhost", "root", "", "usersdb");
-if (!$con) {
-    die("Connection error" . mysqli_connect_error());
-}
-
-// checking the form submit
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    // preventing blank fields
-    if (empty($username) || empty($password)) {
-        $message = 'Error: all fields must not be empty';
-    } else {
-        // sql command
-        $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
-        // activating the command
-        $result = mysqli_query($con, $sql);
-        $row = mysqli_fetch_array($result);
-        // if there is user found
-        if (!empty($row)) {
-            $_SESSION["first_name"] = $row["first_name"];
-            $_SESSION["last_name"] = $row["last_name"];
-            $_SESSION["email"] = $row["email"];
-            $_SESSION["username"] = $row["username"];
-        } else {
-            $message = 'Error: username or password is incorrect.';
-        }
+    // Destroys a session after logout button and redirecting the user to the login page
+    if ($_SERVER['REQUEST_METHOD'] === "POST") {
+        session_destroy();
+        header("location: login.php");
     }
+} else {
+    // Redirects the user to the login page, if they are not logged in
+    header("location: login.php");
 }
 ?>
 
@@ -51,28 +32,60 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>User Login</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>User info</title>
 </head>
 
-
 <body>
-    <section class="section" id="login-section">
-        <div class="form-container">
-            <h2 class="heading-2">User Login</h2>
-            <form method="post" action="index.php" class="contact-form">
-                <div class="contact-row">
-                    <i class="fa-solid fa-user login-icon"></i>
-                    <input type="text" class="contact-input" name="username" placeholder="Enter your username...">
+    <!-- User section -->
+    <section id="user-section">
+        <h1 class="heading-1">About
+            <?php echo $username ?>
+        </h1>
+        <div class="user-table">
+            <div class="row">
+                <div class="col col-bold">
+                    First name:
                 </div>
-                <div class="contact-row">
-                    <i class="fa-solid fa-lock login-icon"></i>
-                    <input type="password" class="contact-input" name="password" placeholder="Enter your password...">
+                <div class="col">
+                    <?php echo $first_name; ?>
                 </div>
-                <input type="submit" value="Log in" class="form-button">
+            </div>
+            <div class="row">
+                <div class="col col-bold">
+                    Last name:
+                </div>
+                <div class="col">
+                    <?php echo $last_name; ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-bold">
+                    Email:
+                </div>
+                <div class="col">
+                    <?php echo $email; ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-bold">
+                    Username:
+                </div>
+                <div class="col">
+                    <?php echo $username; ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-bold">
+                    Password:
+                </div>
+                <div class="col">
+                    <?php echo $password ?>
+                </div>
+            </div>
+            <form action="index.php" method="post">
+                <input type="submit" value="Logout" class="logout-button">
             </form>
-            <p class="error-description">
-                <?php echo $message ?>
-            </p>
         </div>
     </section>
 

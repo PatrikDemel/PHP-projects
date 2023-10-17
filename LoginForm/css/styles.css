@@ -1,5 +1,7 @@
+/* Font import */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
 
+/* Global */
 * {
   margin: 0;
   padding: 0;
@@ -8,17 +10,16 @@
   cursor: default;
 }
 
-#login-section {
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 0, 167, 1) 0%,
-    rgba(255, 0, 0, 1) 100%
-  );
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+body {
+  overflow: hidden;
+}
+
+/* Utility classes */
+.heading-1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 3rem;
 }
 
 .heading-2 {
@@ -31,7 +32,6 @@
 
 .form-container {
   background-color: rgba(0, 0, 0, 0.705);
-  margin-top: 10%;
   padding: 5rem 3rem;
   border-radius: 30px;
   width: 50%;
@@ -41,6 +41,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.section {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .contact-row {
@@ -88,5 +97,122 @@
 .error-description {
   text-align: center;
   color: #ff0000;
-  margin: 3rem auto 0 auto;
+  margin: 3rem auto 2rem auto;
+}
+
+/* Login section */
+#login-section {
+  background: linear-gradient(
+    111deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 5, 255, 1) 100%
+  );
+}
+
+#login-section .register-offer {
+  color: #fff;
+  text-align: center;
+}
+
+#login-section .form-link {
+  color: #fff;
+  cursor: pointer;
+}
+
+/* User section */
+#user-section {
+  height: 100vh;
+  width: 100vw;
+  padding: 5rem 10vw;
+  background: linear-gradient(
+    111deg,
+    rgba(255, 0, 224, 1) 0%,
+    rgba(255, 0, 0, 1) 100%
+  );
+}
+
+#user-section .user-table {
+  width: 70%;
+  background-color: rgba(0, 0, 0, 0.616);
+  padding: 3rem;
+  border-radius: 30px;
+}
+
+#user-section .row {
+  display: flex;
+  column-gap: 1rem;
+  width: 100%;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 0.5rem;
+}
+
+#user-section .col:first-of-type {
+  width: 10%;
+}
+
+#user-section .col-bold {
+  font-weight: 600;
+}
+
+#user-section .col {
+  color: #fff;
+}
+
+#user-section .logout-button {
+  width: 30%;
+  padding: 0.8rem 0;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color ease-in-out 0.2s;
+}
+
+#user-section .logout-button:hover {
+  background-color: #e0e0e0;
+}
+
+#user-section .change-password-link {
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Register section */
+#register-section {
+  background: linear-gradient(
+    111deg,
+    rgba(0, 44, 255, 1) 0%,
+    rgba(0, 189, 255, 1) 100%
+  );
+  z-index: 0;
+}
+
+#register-section .form-container {
+  padding: 2.5rem 5rem;
+}
+
+#register-section-registered {
+  z-index: 1;
+  background: linear-gradient(
+    111deg,
+    rgba(0, 44, 255, 1) 0%,
+    rgba(0, 189, 255, 1) 100%
+  );
+}
+
+#register-section-registered .registered-container {
+  background-color: rgba(0, 0, 0, 0.692);
+  padding: 5rem;
+  border-radius: 30px;
+}
+
+#register-section-registered .registered-container .registered-description {
+  color: #fff;
+}
+
+#register-section-registered .registered-container a {
+  color: #fff;
+  cursor: pointer;
 }
