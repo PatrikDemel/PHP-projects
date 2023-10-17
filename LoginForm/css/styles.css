@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  cursor: default;
+}
+
+#login-section {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 0, 167, 1) 0%,
+    rgba(255, 0, 0, 1) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading-2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.form-container {
+  background-color: rgba(0, 0, 0, 0.705);
+  margin-top: 10%;
+  padding: 5rem 3rem;
+  border-radius: 30px;
+  width: 50%;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-row {
+  background-color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.contact-row .login-icon {
+  font-size: 1.5rem;
+  padding: 0.3rem 0.5rem 0.3rem 0.3rem;
+}
+
+.contact-row .contact-input {
+  width: 85%;
+  border: none;
+  outline: none;
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+  cursor: text;
+}
+
+.form-button {
+  width: 30%;
+  margin-top: 1rem;
+  padding: 0.7rem 0;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background-color ease-in-out 0.2s;
+}
+
+.form-button:hover {
+  background-color: #e0e0e0;
+}
+
+.error-description {
+  text-align: center;
+  color: #ff0000;
+  margin: 3rem auto 0 auto;
+}
