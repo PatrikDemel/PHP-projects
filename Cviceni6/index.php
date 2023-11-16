@@ -1,6 +1,7 @@
 <?php
 
 include_once('templ_header.php');
+require_once('functions.php');
 
 echo '
   <main role="main" class="inner cover">
