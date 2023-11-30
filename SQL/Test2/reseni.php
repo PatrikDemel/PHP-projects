@@ -22,7 +22,7 @@ $listEmployee = array(
         'Manager' => 77918,
         'Pohlaví' => 'Z'
     )
-)
+    );
 
 // 2
 function calcSumOfBonus($array){
@@ -32,18 +32,25 @@ function calcSumOfBonus($array){
         $sumbonuses += $value['Odměna'];
     }
 
-    return "Pro vyplacení odměn bude zapotřebí alokovat $sumbonuses Kč";
+    return "<p>Pro vyplacení odměn bude zapotřebí alokovat $sumbonuses Kč</p><br>";
 }
 
 echo calcSumOfBonus($listEmployee);
 
 
 // 3
+$zamestnanci = '';
+
 foreach($listEmployee as $value){
     if ($value['Odměna'] < 1000 && $value['Pohlaví'] == 'Z'){
-        echo $value['Zaměstnanec'];
-    }else {
-        echo '_Nenalezeno_';
+        $zamestnanci = $zamestnanci . $value['Zaměstnanec'] . ', ';
     }
 }
+
+if ($zamestnanci != '') {
+    echo $zamestnanci;
+}else {
+    echo '<p>_Nenalezeno_</p>';
+}
+
 ?>
