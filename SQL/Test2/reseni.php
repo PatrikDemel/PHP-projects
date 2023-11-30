@@ -23,7 +23,6 @@ $listEmployee = array(
     )
 )
 
-// Změňte jména proměnných
 function calcSumOfBonus($array){
     $sumbonuses = 0;
 
@@ -31,10 +30,17 @@ function calcSumOfBonus($array){
         $sumbonuses += $value['Odměna'];
     }
 
-    return "<p>Pro vyplacení odměn bude zapotřebí alokovat $sumbonuses Kč</p>";
+    return "Pro vyplacení odměn bude zapotřebí alokovat $sumbonuses Kč";
 }
 
 echo calcSumOfBonus($listEmployee);
 
 
+foreach($listEmployee as $value){
+    if ($value['Odměna'] < 1000 && $value['Pohlaví'] = 'Z'){
+        echo $value['Zaměstnanec'];
+    }else {
+        echo '_Nenalezeno_';
+    }
+}
 ?>
