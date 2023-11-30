@@ -1,4 +1,5 @@
 <?php
+// 1
 $listEmployee = array(
     array(
         'Osobní číslo' => 77918,
@@ -23,6 +24,7 @@ $listEmployee = array(
     )
 )
 
+// 2
 function calcSumOfBonus($array){
     $sumbonuses = 0;
 
@@ -36,6 +38,7 @@ function calcSumOfBonus($array){
 echo calcSumOfBonus($listEmployee);
 
 
+// 3
 foreach($listEmployee as $value){
     if ($value['Odměna'] < 1000 && $value['Pohlaví'] = 'Z'){
         echo $value['Zaměstnanec'];
