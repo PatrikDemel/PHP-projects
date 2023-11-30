@@ -40,7 +40,7 @@ echo calcSumOfBonus($listEmployee);
 
 // 3
 foreach($listEmployee as $value){
-    if ($value['Odměna'] < 1000 && $value['Pohlaví'] = 'Z'){
+    if ($value['Odměna'] < 1000 && $value['Pohlaví'] == 'Z'){
         echo $value['Zaměstnanec'];
     }else {
         echo '_Nenalezeno_';
