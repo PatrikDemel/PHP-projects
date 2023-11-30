@@ -23,5 +23,17 @@ $listEmployee = array(
     )
 )
 
+function calcSumOfBonus($array){
+    $sumbonuses = 0;
+
+    foreach($array as $value){
+        $sumbonuses += $value['Odměna'];
+    }
+
+    return "<p>Pro vyplacení odměn bude zapotřebí alokovat $sumbonuses Kč</p>";
+}
+
+echo calcSumOfBonus($listEmployee);
+
 
 ?>
