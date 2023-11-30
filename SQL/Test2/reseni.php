@@ -23,6 +23,7 @@ $listEmployee = array(
     )
 )
 
+// Změňte jména proměnných
 function calcSumOfBonus($array){
     $sumbonuses = 0;
 
